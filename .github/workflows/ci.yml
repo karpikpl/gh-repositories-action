@@ -53,12 +53,20 @@ jobs:
         id: checkout
         uses: actions/checkout@v4
 
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          owner: cody-test-org
+
       - name: Test Local Action
         id: test-action
         uses: ./
         with:
-          milliseconds: 1000
+          github-pat: '${{ steps.app-token.outputs.token }}'
+          github-org: cody-test-org
 
       - name: Print Output
         id: output
-        run: echo "${{ steps.test-action.outputs.time }}"
+        run: echo "${{ steps.test-action.outputs.file }}"
