@@ -9,7 +9,7 @@ const { toCSV } = require('./csvHelper')
 async function run() {
   try {
     const org = core.getInput('github-org', { required: true })
-    const token = core.getInput('github-token', { required: true })
+    const token = core.getInput('github-pat', { required: true })
 
     const repoManager = new RepositoryManager(token)
     const repositories = await repoManager.getRepositories(org, token)
