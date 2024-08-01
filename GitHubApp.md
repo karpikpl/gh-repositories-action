@@ -10,15 +10,15 @@ Go to Organization -> Settings -> GitHub Apps -> New App
 
 Set all required scopes for the app.
 
-* Read all repositories
-* "Metadata" repository permissions (read)
-* "Contents" repository permissions (read)
-* "Secrets" repository permissions (read) 
-* "Environments" repository permissions (read)
+- Read all repositories
+- "Metadata" repository permissions (read)
+- "Contents" repository permissions (read)
+- "Secrets" repository permissions (read)
+- "Environments" repository permissions (read)
 
 For Orgs:
 
-* "Members" (read) 
+- "Members" (read)
 
 ## Generate a private key
 
