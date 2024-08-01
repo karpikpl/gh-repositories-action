@@ -1,18 +1,26 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Get report for all repositories in the org'
+description: 'Get a CSV report for all repositories in the organization'
+author: 'Piotr Karpala'
+
+# Add your action's branding here. This will appear on the GitHub Marketplace.
+branding:
+  icon: 'heart'
+  color: 'red'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  github-pat:
+    description:
+      'Application token with permissions to read organization repositories'
     required: true
-    default: '1000'
+  github-org:
+    description: 'The name of the organization check copilot seats for'
+    required: true
 
 # Define your outputs here.
 outputs:
-  time:
-    description: 'Your output description here'
+  file:
+    description: 'CSV file with the report'
 
 runs:
   using: node20
