@@ -72,7 +72,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  cleanup_copilot_licenses:
+  get_repositories_report:
     runs-on: ubuntu-latest
 
     steps:
