@@ -135,7 +135,7 @@ class RepositoryManager {
         )
       } else {
         // Handle other potential errors
-        core.error(`An error occurred for ${owner} / ${repo}:`, error.message)
+        core.error(`An error occurred for ${owner} / ${repo}: ${error.message}`)
       }
     }
     return false
@@ -158,8 +158,7 @@ class RepositoryManager {
       }
     } catch (error) {
       core.error(
-        `An error occurred while checking for secrets in ${owner} / ${repo}:`,
-        error.message
+        `An error occurred while checking for secrets in ${owner} / ${repo} : ${error.message}`
       )
       return false
     }
@@ -185,8 +184,7 @@ class RepositoryManager {
       }
     } catch (error) {
       core.error(
-        `An error occurred while checking for environments in ${owner} / ${repo}:`,
-        error.message
+        `An error occurred while checking for environments in ${owner} / ${repo} : ${error.message}`
       )
       return []
     }
@@ -213,8 +211,7 @@ class RepositoryManager {
       }
     } catch (error) {
       core.error(
-        `An error occurred while checking for collaborators in ${owner} / ${repo} :`,
-        error.message
+        `An error occurred while checking for collaborators in ${owner} / ${repo} : ${error.message}`
       )
       return []
     }
@@ -238,8 +235,7 @@ class RepositoryManager {
       }
     } catch (error) {
       core.error(
-        `An error occurred while checking for teams in ${owner} / ${repo} :`,
-        error.message
+        `An error occurred while checking for teams in ${owner} / ${repo} : ${error.message}`
       )
       return []
     }
