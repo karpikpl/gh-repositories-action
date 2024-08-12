@@ -1,4 +1,4 @@
-# Create a JavaScript Action
+# Get a report about repositories in the organization
 
 [![GitHub Super-Linter](https://github.com/karpikpl/gh-repositories-action/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
 ![CI](https://github.com/karpikpl/gh-repositories-action/actions/workflows/ci.yml/badge.svg)
@@ -12,7 +12,7 @@ Produce a CSV file with information about repositories. :rocket:
 
 Reading repositories information requires following permissions:
 
-- **manage_billing:copilot**
+- Token classic with **read:enterprise, read:org, read:user, repo**
 
 that cannot be granted to a workflow. Please either use a PAT or Application
 token:
@@ -123,7 +123,7 @@ jobs:
 ### `github-pat`
 
 **Required** GitHub personal access token or application token with permissions
-to manage_billing:copilot.
+to **read:enterprise, read:org, read:user, repo**.
 
 ### `github-org`
 

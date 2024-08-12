@@ -1,6 +1,6 @@
 {
   "name": "gh-repositories-report",
-  "description": "GitHub Actions JavaScript Template",
+  "description": "Get information about repositories in the GitHub Organization",
   "version": "1.0.0",
   "author": "Piotr Karpala",
   "private": true,

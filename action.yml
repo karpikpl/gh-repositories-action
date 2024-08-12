@@ -11,7 +11,7 @@ branding:
 inputs:
   github-pat:
     description:
-      'Application token with permissions to read organization repositories'
+      'Application token with permissions to read organization repositories: read:enterprise, read:org, read:user, repo'
     required: true
   github-org:
     description: 'The name of the organization check copilot seats for'
