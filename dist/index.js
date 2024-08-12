@@ -29194,9 +29194,12 @@ function wrappy (fn, cb) {
 const { Parser } = __nccwpck_require__(809)
 const core = __nccwpck_require__(2186)
 const fs = __nccwpck_require__(7147)
+const { delimiter } = __nccwpck_require__(1017)
 
 function toCSV(data, organization) {
-  const opts = {}
+  const opts = {
+    delimiter: ';'
+  }
   const parser = new Parser(opts)
   const csv = parser.parse(data)
   const csvPath = `github_${organization}_output.csv`
@@ -29389,7 +29392,7 @@ class RepositoryManager {
           archived: repo.archived,
           disabled: repo.disabled,
           open_issues_count: repo.open_issues_count,
-          license: repo.license,
+          license: repo.license?.name,
           allow_forking: repo.allow_forking,
           is_template: repo.is_template,
           web_commit_signoff_required: repo.web_commit_signoff_required,
@@ -29398,7 +29401,7 @@ class RepositoryManager {
           open_issues: repo.open_issues,
           watchers: repo.watchers,
           default_branch: repo.default_branch,
-          permissions: repo.permissions,
+          permissions: this.formatPermissions(repo.permissions),
 
           hasActions,
           teams:
@@ -29552,6 +29555,16 @@ class RepositoryManager {
       )
       return []
     }
+  }
+
+  formatPermissions(permissions) {
+    if (!permissions) {
+      return ''
+    }
+
+    return Object.entries(permissions)
+      .map(([key, value]) => `${key}:${value}`)
+      .join(', ')
   }
 }
 
