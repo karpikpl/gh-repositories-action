@@ -103,3 +103,4 @@ __tests__/runner/*
 *.code-workspace
 local.http
 src/test.js
+src/*.csv

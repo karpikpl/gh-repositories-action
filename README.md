@@ -12,7 +12,7 @@ Produce a CSV file with information about repositories. :rocket:
 
 Reading repositories information requires following permissions:
 
-- Token classic with **read:enterprise, read:org, read:user, repo**
+- **Read access to actions, administration, code, environments, metadata, and secrets**
 
 that cannot be granted to a workflow. Please either use a PAT or Application
 token:
@@ -122,8 +122,7 @@ jobs:
 
 ### `github-pat`
 
-**Required** GitHub personal access token or application token with permissions
-to **read:enterprise, read:org, read:user, repo**.
+**Required** GitHub personal access token or application token with **Read access to actions, administration, code, environments, metadata, and secrets**
 
 ### `github-org`
 

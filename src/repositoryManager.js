@@ -90,7 +90,11 @@ class RepositoryManager {
           watchers: repo.watchers,
           default_branch: repo.default_branch,
           permissions: this.formatPermissions(repo.permissions),
-
+          Advanced_Security: repo.security_and_analysis?.advanced_security?.status || 'n/a',
+          secret_scanning: repo.security_and_analysis?.secret_scanning?.status  || 'n/a',
+          secret_scanning_push_protection: repo.security_and_analysis?.secret_scanning_push_protection?.status  || 'n/a',
+          dependabot_security_updates: repo.security_and_analysis?.dependabot_security_updates?.status  || 'n/a',
+          secret_scanning_validity_checks: repo.security_and_analysis?.secret_scanning_validity_checks?.status  || 'n/a',
           hasActions,
           teams:
             teams.length > 0
